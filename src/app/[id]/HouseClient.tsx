@@ -171,8 +171,8 @@ export default function HouseClient({ subdivision }: HouseClientProps) {
 
             <div className="mb-2">
               <h1 className="text-2xl font-bold">
-                <span className="text-[var(--zoop-blue)] sm:pr-2">분양중</span> 
-                <br className="block sm:hidden"/>
+                {/* <span className="text-[var(--zoop-blue)] sm:pr-2">분양중</span>  */}
+                {/* <br className="block sm:hidden"/> */}
                 {formatPrice(subdivision.price || 0)} ~ {formatPrice(subdivision.size?.[subdivision.size.length - 1]?.price || 0)}
               </h1>
             </div>
@@ -238,7 +238,7 @@ export default function HouseClient({ subdivision }: HouseClientProps) {
             </div>
 
             <div className="mt-2 text-xs text-gray-500">
-              <p>관심 21 · 조회 923 · 채팅 3</p>
+              <p>관심 21 · 조회 923</p>
             </div>
 
             <MapWithMarker address={subdivision.address || ""} />
