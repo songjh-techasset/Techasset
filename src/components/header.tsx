@@ -109,7 +109,7 @@ export default function Header() {
         </div>
         <div className="flex items-center">
           <nav className="hidden md:flex space-x-10 px-10 font-medium">
-            <Link href="/service" className="">
+            <Link href="/" className="">
               <p className="hover:font-semibold">한국기술자산</p>
             </Link>
           </nav>
@@ -187,7 +187,7 @@ export default function Header() {
               </div>
               <nav className="flex flex-col space-y-6 text-lg font-medium mb-8">
                 <Link
-                  href="/service"
+                  href="/"
                   className="hover:text-orange-500 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

@@ -71,7 +71,7 @@ export default function Footer() {
                 <ul className="space-x-3 sm:space-x-4 text-sm flex flex-row justify-between w-full">
 
                   <li>
-                    <Link href="/service" className="hover:underline underline-offset-4 inline-block py-1">
+                    <Link href="/" className="hover:underline underline-offset-4 inline-block py-1">
                       서비스 소개
                     </Link>
                   </li>
