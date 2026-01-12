@@ -23,7 +23,7 @@ export default function HeroSection() {
       <div className="w-full max-w-5xl">
         <div className="rounded-3xl overflow-hidden">
           <Image
-            src="/picture1.jpg"
+            src="/Picture1.jpg"
             alt="Modern wooden and brick house"
             width={1200}
             height={700}
