@@ -6,24 +6,24 @@ export default function HeroSection() {
       {/* Badge */}
       <div className="mb-6">
         <span className="inline-block px-4 py-1 rounded-full bg-[var(--zoop-gray)]/30 text-[var(--zoop-blue)] border border-[var(--zoop-gray)]/50 text-sm font-medium">
-          ZOOP ZOOP | 아파트 청약정보는 줍줍
+           TECHNOLOGY ASSET KOREA
         </span>
       </div>
 
       {/* Heading */}
       <h1 className="text-3xl sm:text-5xl leading-snug font-bold text-center mb-12 max-w-4xl">
-        내 집 마련,
+        (주) 한국기술자산
         <br className="" />
-        이젠 꿈이 아닌
+        Intelligent Factory를 실현합니다.
         <br className="block sm:hidden" />
-        <span className="text-[var(--zoop-blue)]"> 현실</span>입니다.
+        
       </h1>
 
       {/* Image */}
       <div className="w-full max-w-5xl">
         <div className="rounded-3xl overflow-hidden">
           <Image
-            src="/hero.jpg"
+            src="/picture1.jpg"
             alt="Modern wooden and brick house"
             width={1200}
             height={700}

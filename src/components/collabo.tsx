@@ -4,11 +4,11 @@ export default function CollaboSection() {
   // Array of collaboration logos with their details
   const collaborators = [
     { src: "/collabor/1.png", alt: "Kakao", width: 120, height: 40 },
-    { src: "/collabor/2.png", alt: "KB 국민은행", width: 220, height: 40 },
-    { src: "/collabor/3.png", alt: "KB 증권", width: 220, height: 40 },
+    { src: "/collabor/jungsoventureimg.png", alt: "중기부", width: 120, height: 40, grayscale: true },
     { src: "/collabor/4.png", alt: "KT", width: 220, height: 40 },
-    { src: "/collabor/5.png", alt: "신한카드", width: 220, height: 40 },
-    { src: "/collabor/6.png", alt: "삼성제", width: 120, height: 40 },
+    { src: "/collabor/hyundaiindus.png", alt: "HDI", width: 120, height: 40, grayscale: true },
+    { src: "/collabor/lselectric.png", alt: "LS", width: 120, height: 40, grayscale: true },
+    { src: "/collabor/3.png", alt: "KB 증권", width: 220, height: 40 },
   ]
 
   return (
@@ -22,7 +22,7 @@ export default function CollaboSection() {
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
-              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
+              className={`h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain ${logo.grayscale ? 'filter grayscale' : ''}`}
             />
           </div>
         ))}

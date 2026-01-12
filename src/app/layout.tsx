@@ -3,9 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
 
-
-import { AuthProvider } from "../contexts/auth-context";
-import ChannelService from "@/components/channel-talk";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -20,16 +17,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "아파트 청약은 줍줍 | 대한민국 분양 정보 플랫폼",
-  description: "전국 아파트 분양, 분양권, 규제, 전매제한, 실거주의무, 입주예정일, 교통, 학군, 편의시설 등 모든 정보를 한눈에!",
+  title: "주식회사 한국기술자산",
+  description: "주식회사 한국기술자산",
   openGraph: {
-    title: "아파트 청약은 줍줍 | 대한민국 분양 정보 플랫폼",
-    description: "전국 아파트 분양, 분양권, 규제, 전매제한, 실거주의무, 입주예정일, 교통, 학군, 편의시설 등 모든 정보를 한눈에!",
-    url: process.env.NEXT_PUBLIC_BASE_URL || "https://zoopzoop.homes",
+    title: "주식회사 한국기술자산",
+    description: "주식회사 한국기술자산",
+    url: process.env.NEXT_PUBLIC_BASE_URL || "https://techasset.co.kr",
     type: "website",
     images: [
       {
-        url: (process.env.NEXT_PUBLIC_BASE_URL || "https://zoopzoop.homes") + "/og-default.png",
+        url: (process.env.NEXT_PUBLIC_BASE_URL || "https://techasset.co.kr") + "/og-default.png",
         width: 1200,
         height: 630,
         alt: "줍줍 대표 이미지",
@@ -38,10 +35,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "아파트 청약은 줍줍 | 대한민국 분양 정보 플랫폼",
-    description: "전국 아파트 분양, 분양권, 규제, 전매제한, 실거주의무, 입주예정일, 교통, 학군, 편의시설 등 모든 정보를 한눈에!",
+    title: "주식회사 한국기술자산",
+    description: "주식회사 한국기술자산",
     images: [
-      (process.env.NEXT_PUBLIC_BASE_URL || "https://zoopzoop.homes") + "/og-default.png"
+      (process.env.NEXT_PUBLIC_BASE_URL || "https://techasset.co.kr") + "/og-default.png"
     ],
   },
   other: {
@@ -51,14 +48,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {children}
         <Script
           async
           src='https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js'
@@ -67,11 +65,6 @@ export default function RootLayout({
         ></Script>
         <Analytics />
         <SpeedInsights />
-        <AuthProvider>
-          {children}
-          <ChannelService/>
-
-        </AuthProvider>
       </body>
     </html>
   );

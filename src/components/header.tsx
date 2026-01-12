@@ -2,14 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useAuth } from "@/contexts/auth-context";
-import { Modal } from "@/components/ui/modal";
+
 
 export default function Header() {
-  const { user,  signOut } = useAuth()
 
   const [hasScrolled, setHasScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
 
@@ -104,7 +101,7 @@ export default function Header() {
         <div className="flex items-center">
           <Link href="/" className="mr-4 sm:mr-8 cursor-pointer flex flex-col items-center">
             <p className="text-xl sm:text-3xl font-extrabold tracking-tighter">
-              <span className="bg-gradient-to-r from-[var(--zoop-blue)] to-[var(--zoop-blue-light)] bg-clip-text text-transparent">ZOOP</span> ZOOP
+            (주) 한국기술자산
             </p>
             {/* <p className="text-sm text-gray-500">아파트 청약 정보는 &apos;줍줍&apos;</p> */}
           </Link>
@@ -113,37 +110,23 @@ export default function Header() {
         <div className="flex items-center">
           <nav className="hidden md:flex space-x-10 px-10 font-medium">
             <Link href="/service" className="">
-              <p className="hover:font-semibold">KA 한국자산관리</p>
-            </Link>
-            <Link href="https://walla.my/v/K9IViOO4mtIYwEBNvZ8h" className="">
-              <p className="hover:font-semibold">광고 문의하기</p>
+              <p className="hover:font-semibold">한국기술자산</p>
             </Link>
           </nav>
           <div className="hidden md:flex items-center">
-            {/* {user ? (
-              <button onClick={() => {
-                console.log("logout")
-                signOut()
-                }} className=" hover:bg-black text-black/90 hover:text-white font-medium border mr-3 rounded-md px-4 py-2 text-sm transition-colors ease-in-out cursor-pointer">
-                로그아웃
-              </button>
-            ) : (
-              <Link href="/login" className=" hover:bg-black text-black/90 hover:text-white font-medium border border-black mr-3 rounded-md px-4 py-2 text-sm transition-colors ease-in-out cursor-pointer">
-                로그인 
-              </Link>
-            )} */}
-            <Link href="https://walla.my/v/jmGi5KblaB0pekmTaJyr" className="bg-gradient-to-r from-[var(--zoop-blue)] to-[var(--zoop-blue-light)] hover:bg-gradient-to-r hover:from-[var(--zoop-blue-light)] hover:to-[var(--zoop-blue-light)] text-white font-semibold rounded-md px-4 py-2 text-sm transition-colors transition-1sease-in-out cursor-pointer">
-              청약 알림받기
+           
+            <Link href="https://walla.my/v/b1An8BpswJfRBo6VnhoR" className="bg-gradient-to-r from-[var(--zoop-blue)] to-[var(--zoop-blue-light)] hover:bg-gradient-to-r hover:from-[var(--zoop-blue-light)] hover:to-[var(--zoop-blue-light)] text-white font-semibold rounded-md px-4 py-2 text-sm transition-colors transition-1sease-in-out cursor-pointer">
+              CONTACT
             </Link>
           </div>
 
           {/* Mobile Menu Button and Download Button */}
           <div className="md:hidden flex items-center gap-2">
             <Link
-              href="https://walla.my/v/jmGi5KblaB0pekmTaJyr"
+              href="https://walla.my/v/b1An8BpswJfRBo6VnhoR"
               className="bg-zoop-blue hover:bg-zoop-blue/80 text-white font-semibold rounded-md px-3 py-1.5 text-sm transition-colors ease-in-out cursor-pointer"
             >
-              청약 알림받기
+             문의하기 
             </Link>
 
             <button
@@ -211,48 +194,17 @@ export default function Header() {
                   서비스 소개
                 </Link>
                 <Link
-                  href="https://walla.my/v/K9IViOO4mtIYwEBNvZ8h"
+                  href="https://walla.my/v/b1An8BpswJfRBo6VnhoR"
                   className="hover:text-orange-500 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  광고 문의하기
+                문의하기
                 </Link>
               </nav>
-              <div className="mt-auto">
-                {user ? (
-                  <button
-                    onClick={() => {
-                      console.log("logout")
-                      signOut()
-                      setIsMobileMenuOpen(false)
-                    }}
-                    className="w-full hover:bg-black text-black/90 hover:text-white font-medium border rounded-md px-4 py-2 text-sm transition-colors ease-in-out cursor-pointer"
-                  >
-                    로그아웃
-                  </button>
-                ) : (
-                  <Link
-                    href="/login"
-                    className="block w-full text-center hover:bg-black text-black/90 hover:text-white font-medium border rounded-md px-4 py-2 text-sm transition-colors ease-in-out cursor-pointer"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    로그인
-                  </Link>
-                )}
-              </div>
+              
             </div>
           </div>
           
-          <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-            <div className="flex flex-col items-center justify-center py-6">
-              <div className="h-8 w-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-              <h3 className="text-lg mb-6 font-medium">준비중입니다 !</h3>
-              {/* <p className="text-sm text-gray-500 my-1">앱이 준비되면 알려드리겠습니다.</p> */}
-              {/* <Link href="/signup" className="text-orange-500 font-medium text-sm mt-4 hover:font-bold">알림 받기</Link> */}
-              <a href="tel:01021578187" className="hover:underline flex items-center text-base gap-1 mb-2">📞 광고 문의 하기</a>
-              <a href="mailto:contact@zoopzoop.homes" className="hover:underline mb-3 text-base"> 📧 광고 문의 하기</a>
-            </div>
-          </Modal>
         </div>
       </div>
     </header>

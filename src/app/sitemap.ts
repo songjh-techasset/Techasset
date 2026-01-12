@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   })
   const subdivisions = await res.json()
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoopzoop.homes'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://techasset.co.kr'
 
   return [
     {
