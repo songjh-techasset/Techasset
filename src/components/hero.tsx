@@ -14,7 +14,7 @@ export default function HeroSection() {
       <h1 className="text-3xl sm:text-5xl leading-snug font-bold text-center mb-12 max-w-4xl">
         (주) 한국기술자산
         <br className="" />
-        Intelligent Factory를 실현합니다.
+        리뉴얼 작업 후 곧 찾아뵙겠습니다
         <br className="block sm:hidden" />
         
       </h1>

@@ -9,7 +9,6 @@ export default function Home() {
     <Header />
     <div>
       <HeroSection />
-      <CollaboSection />
     </div>
     <Footer />
     </>
